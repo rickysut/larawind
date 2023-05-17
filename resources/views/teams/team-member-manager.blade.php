@@ -100,13 +100,14 @@
 
                                 <div class="flex items-center">
                                     <!-- Manage Team Member Role -->
+
                                     @if (Gate::check('addTeamMember', $team) && Laravel\Jetstream\Jetstream::hasRoles())
                                         <button class="ml-2 text-sm text-gray-400 underline" wire:click="manageRole('{{ $user->id }}')">
-                                            {{ Laravel\Jetstream\Jetstream::findRole($user->membership->role)->name }}
+                                            {{-- {{ Laravel\Jetstream\Jetstream::findRole($user->membership->role)->user_id }} --}}
                                         </button>
                                     @elseif (Laravel\Jetstream\Jetstream::hasRoles())
                                         <div class="ml-2 text-sm text-gray-400">
-                                            {{ Laravel\Jetstream\Jetstream::findRole($user->membership->role)->name }}
+                                            {{-- {{ Laravel\Jetstream\Jetstream::findRole($user->membership->role)->user_id }} --}}
                                         </div>
                                     @endif
 
